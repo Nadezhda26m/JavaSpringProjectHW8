@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="StorageServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="dStorageServiceApplication" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.kirin.storage.StorageServiceApplication" />
     <module name="storage-service" />
     <extension name="coverage">
