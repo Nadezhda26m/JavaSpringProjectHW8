@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employees List</title>
+</head>
+
+<body>
+<h1 style="color:#800000;">Сотрудники</h1>
+<div th:switch="${employees}">
+    <h2 th:case="null">Нет найденных сотрудников!</h2>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Фамилия</th>
+                <th>Телефон</th>
+                <th>Эл. почта</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.middleName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.phoneNumber}"></td>
+                <td th:text="${employee.email}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><a href="/api"><button>Главная страница</button></a></p>
+</body>
+</html>

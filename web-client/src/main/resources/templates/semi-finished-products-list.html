@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Semi Finished Products List</title>
+</head>
+
+<body>
+<h1 style="color:#800000;">Полуфабрикаты</h1>
+<div th:switch="${products}">
+    <h2 th:case="null">Нет найденных полуфабрикатов!</h2>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Наименование полуфабриката</th>
+                <th>Количество, кг</th>
+                <th>Дата изготовления</th>
+                <th>Срок годности, часы</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.count}"></td>
+                <td th:text="${product.dateOfManufacture}"></td>
+                <td th:text="${product.shelfLife}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><a href="/api"><button>Главная страница</button></a></p>
+</body>
+</html>

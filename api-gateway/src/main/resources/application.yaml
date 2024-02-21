@@ -1,0 +1,20 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: apiGateway
+  cloud:
+    gateway:
+      routes:
+        - id: productStorage
+          uri: http://localhost:7071
+          predicates:
+            - Path=/storage/**,/kitchen/**
+        - id: personnel
+          uri: http://localhost:7072/
+          predicates:
+            - Path=/personnel/**
+        - id: webClient
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api/**

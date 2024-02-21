@@ -1,0 +1,10 @@
+server:
+  port: 7072
+
+spring:
+  application:
+    name: personnel
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
