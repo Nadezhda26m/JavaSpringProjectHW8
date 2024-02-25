@@ -1,4 +1,4 @@
-# Spring homework 8 - 12
+# Spring homework 8
 
 ## Settings
 
@@ -22,8 +22,8 @@ Language level: 17 (SDK default)
 
 1. eureka-server
 2. api-gateway
-3. storage-module
-4. personnel-module
+3. storage-service
+4. personnel-service
 5. web-client
 
 ---
