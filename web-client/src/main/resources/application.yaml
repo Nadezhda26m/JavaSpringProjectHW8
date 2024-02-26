@@ -4,3 +4,12 @@ server:
 spring:
   application:
     name: webClient
+
+management:
+  endpoint:
+    health:
+      show-details: always # never or when-authorized
+  endpoints:
+    web:
+      exposure:
+        include: metrics,prometheus
