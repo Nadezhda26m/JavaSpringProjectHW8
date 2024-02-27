@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="dWebClientApplication" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.kirin.web.WebClientApplication" />
+    <module name="web-client" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.kirin.web.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
