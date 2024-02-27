@@ -1,20 +1,31 @@
 server:
-  port: 8085
+  port: 8765
+
 spring:
   application:
     name: apiGateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          # позволяет не соблюдать регистр при обращении к сервисам
+          lower-case-service-id: true
       routes:
-        - id: productStorage
-          uri: http://localhost:7071
+        - id: storage
+          # lb - балансировщик нагрузки, для обращения к сервису нужно его имя
+          uri: lb://productStorage # spring.application.name
           predicates:
             - Path=/storage/**,/kitchen/**
         - id: personnel
-          uri: http://localhost:7072/
+          uri: lb://personnel
           predicates:
             - Path=/personnel/**
-        - id: webClient
-          uri: http://localhost:8080/
-          predicates:
-            - Path=/api/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  pattern:
+    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

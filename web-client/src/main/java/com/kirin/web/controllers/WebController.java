@@ -24,7 +24,7 @@ public class WebController {
 
     @GetMapping("/storage-info")
     public String getAllProducts(Model model) {
-        model.addAttribute("products", service.getListProductsInStorage());
+        model.addAttribute("products", service.getListProductsInStorage().getBody());
         return "products-list";
     }
 
@@ -42,7 +42,7 @@ public class WebController {
 
     @GetMapping("/storage-info/food-group")
     public String showFoodGroup(@RequestParam("name") String groupName, Model model) {
-        String foodGroup = service.getFoodGroupInfo(groupName);
+        String foodGroup = service.getFoodGroupInfo(groupName).getBody();
         model.addAttribute("groupName", foodGroup);
         return "food-group-products";
     }
@@ -50,14 +50,14 @@ public class WebController {
     @GetMapping("/kitchen-info")
     public String getAllSemiFinishedProducts(Model model) {
         model.addAttribute("products",
-                service.getListSemiFinishedProductsInStorage());
+                service.getListSemiFinishedProductsInStorage().getBody());
         return "semi-finished-products-list";
     }
 
     @GetMapping("/staff")
     public String getAllEmployees(Model model) {
         model.addAttribute("employees",
-                service.getListEmployeesInPersonnel());
+                service.getListEmployeesInPersonnel().getBody());
         return "employees-list";
     }
 }
