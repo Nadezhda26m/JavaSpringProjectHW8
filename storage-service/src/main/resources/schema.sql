@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS raw_products (
      shelf_life INT,
      count DECIMAL(6, 3),
      is_piece_product BOOL,
-     is_in_good_condition BOOL DEFAULT 1
+     is_in_good_condition BOOL
 );
 
 CREATE TABLE IF NOT EXISTS semi_finished_products (

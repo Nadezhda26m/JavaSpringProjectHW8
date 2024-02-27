@@ -27,6 +27,7 @@ public class ProductService {
 
     public ProductResponse addProduct(ProductResponse product) {
         product.setShelfLife(90); // TODO доделать расчет срока годности
+        product.setIsInGoodCondition(true);
         Product product1 = mapper.map(product, Product.class);
         return mapper.map(repository.save(product1), ProductResponse.class);
     }
