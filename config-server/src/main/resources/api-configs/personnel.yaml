@@ -6,8 +6,10 @@ spring:
     include: # Unconditionally activate profiles (yaml)
       - eclient # eureka defaultZone
 #    active: # List of active profiles
-#      - test
-#    default: test
+#      - dev, prod
+#      - prod
+#    active: dev,prod
+#    default: prod
   jpa:
     hibernate:
       ddl-auto: none
