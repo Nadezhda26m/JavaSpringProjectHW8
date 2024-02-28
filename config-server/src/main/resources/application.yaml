@@ -6,7 +6,8 @@ spring:
     name: config-server
   profiles:
     active:
-      - native, git # соберет все конфигурации из разных источников
+      - native
+#      - native, git # соберет все конфигурации из разных источников
   cloud:
     config:
       server:
@@ -15,10 +16,10 @@ spring:
           search-locations:
             # Config files for all microservices
             - classpath:/api-configs # config-server/src/main/resources/api-configs
-          order: 1
-        git:
-          # git репозиторий в папке api-configs с содержимым /resources/api-configs
-          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-          defaultLabel: master
-          order: 2
+#          order: 1
+#        git:
+#          # git репозиторий в папке api-configs с содержимым /resources/api-configs
+#          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
+#          defaultLabel: master
+#          order: 2
 

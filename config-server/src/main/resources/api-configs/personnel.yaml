@@ -2,15 +2,16 @@ server:
   port: 8082
 
 spring:
+  profiles:
+    include: # Unconditionally activate profiles (yaml)
+      - eclient # eureka defaultZone
+#    active: # List of active profiles
+#      - test
+#    default: test
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
 
 logging:
   pattern:

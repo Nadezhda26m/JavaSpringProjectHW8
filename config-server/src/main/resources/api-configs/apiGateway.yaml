@@ -2,6 +2,9 @@ server:
   port: 8765
 
 spring:
+  profiles:
+    include: # Unconditionally activate profiles (yaml)
+      - eclient
   cloud:
     gateway:
       discovery:
@@ -18,11 +21,6 @@ spring:
           uri: lb://personnel
           predicates:
             - Path=/personnel/**
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
 
 logging:
   pattern:
