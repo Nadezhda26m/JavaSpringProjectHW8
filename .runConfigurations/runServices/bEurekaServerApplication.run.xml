@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="aEurekaServerApplication" type="Application" factoryName="Application">
+  <configuration default="false" name="bEurekaServerApplication" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.kirin.eureka.EurekaServerApplication" />
     <module name="eureka-server" />
     <extension name="coverage">

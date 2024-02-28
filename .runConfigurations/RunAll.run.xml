@@ -1,10 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="RunAll" type="CompoundRunConfigurationType">
-    <toRun name="aEurekaServerApplication" type="Application" />
-    <toRun name="bPersonnelServiceApplication" type="Application" />
-    <toRun name="cStorageServiceApplication" type="Application" />
-    <toRun name="dWebClientApplication" type="Application" />
-    <toRun name="eApiGatewayApplication" type="Application" />
+    <toRun name="aConfigServerApplication" type="Application" />
+    <toRun name="bEurekaServerApplication" type="Application" />
+    <toRun name="cPersonnelServiceApplication" type="Application" />
+    <toRun name="dStorageServiceApplication" type="Application" />
+    <toRun name="eWebClientApplication" type="Application" />
+    <toRun name="fApiGatewayApplication" type="Application" />
     <method v="2" />
   </configuration>
 </component>

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="eApiGatewayApplication" type="Application" factoryName="Application">
+  <configuration default="false" name="fApiGatewayApplication" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.kirin.gateway.ApiGatewayApplication" />
     <module name="api-gateway" />
     <extension name="coverage">
