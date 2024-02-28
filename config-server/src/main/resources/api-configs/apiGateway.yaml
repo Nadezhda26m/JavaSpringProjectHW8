@@ -1,0 +1,29 @@
+server:
+  port: 8765
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # позволяет не соблюдать регистр при обращении к сервисам
+          lower-case-service-id: true
+      routes:
+        - id: storage
+          # lb - балансировщик нагрузки, для обращения к сервису нужно его имя
+          uri: lb://productStorage # spring.application.name
+          predicates:
+            - Path=/storage/**,/kitchen/**
+        - id: personnel
+          uri: lb://personnel
+          predicates:
+            - Path=/personnel/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  pattern:
+    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

@@ -1,11 +1,20 @@
 server:
-  port: 8082
+  port: 8081
 
 spring:
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
+
+management:
+  endpoint:
+    health:
+      show-details: always # never or when-authorized
+  endpoints:
+    web:
+      exposure:
+        include: metrics,prometheus
 
 eureka:
   client:

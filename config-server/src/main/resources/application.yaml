@@ -6,18 +6,19 @@ spring:
     name: config-server
   profiles:
     active:
-      - native
+      - native, git # соберет все конфигурации из разных источников
   cloud:
     config:
       server:
+        failOnCompositeError: false # при ошибке в одном из репозиториев продолжит загрузку из других
         native:
           search-locations:
             # Config files for all microservices
             - classpath:/api-configs # config-server/src/main/resources/api-configs
-#            - classpath:/api-configs/{application} # Config files for specific applications
-#        git:
-#          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-##          uri: file://${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-##          uri: file://C:/Users/<name>/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-#          defaultLabel: master
-##          clone-on-start: true
+          order: 1
+        git:
+          # git репозиторий в папке api-configs с содержимым /resources/api-configs
+          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
+          defaultLabel: master
+          order: 2
+
