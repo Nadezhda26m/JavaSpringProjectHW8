@@ -4,11 +4,20 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active:
+      - native
   cloud:
     config:
       server:
-        git:
-          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-#          uri: file://${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-#          uri: file://C:/Users/<name>/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
-          defaultLabel: master
+        native:
+          search-locations:
+            # Config files for all microservices
+            - classpath:/api-configs # config-server/src/main/resources/api-configs
+#            - classpath:/api-configs/{application} # Config files for specific applications
+#        git:
+#          uri: file:///${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
+##          uri: file://${user.home}/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
+##          uri: file://C:/Users/<name>/Desktop/Developer/Terminal/JavaSpringProjects/api-configs
+#          defaultLabel: master
+##          clone-on-start: true
