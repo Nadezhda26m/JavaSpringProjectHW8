@@ -6,6 +6,10 @@ spring:
     include:
       - eclient
 
+# Для подключения через RestClient к api-gateway
+gateway:
+  uri: http://localhost:8765
+
 management:
   endpoint:
     health:
@@ -14,11 +18,3 @@ management:
     web:
       exposure:
         include: metrics,prometheus
-
-# Для подключения через RestClient к api-gateway
-gateway:
-  uri: http://localhost:8765
-
-logging:
-  pattern:
-    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

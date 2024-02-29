@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    include: # Unconditionally activate profiles (yaml)
+    include:
       - eclient
   cloud:
     gateway:
@@ -21,7 +21,3 @@ spring:
           uri: lb://personnel
           predicates:
             - Path=/personnel/**
-
-logging:
-  pattern:
-    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

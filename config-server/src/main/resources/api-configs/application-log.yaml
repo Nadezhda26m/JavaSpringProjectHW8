@@ -1,0 +1,19 @@
+# формат отображения логов в консоли
+logging:
+  pattern:
+    # 13:43:16 [INFO ] com.netflix.discovery.DiscoveryClient         : The response status is 200
+    console: "%d{HH:mm:ss} [%-5level] %clr(%-45.45logger{44}) : %msg%n"
+
+    # com.netflix.discovery.DiscoveryClient [INFO ] 12:45:05 - The response status is 200
+#    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"
+
+#    console: "%d{HH:mm:ss} [%-5level] %C{1.} - %msg%n"
+#    console: "%d{dd.MM.yyyy'T'HH:mm:ss} [%-5level] %C{1.} - %msg%n"
+#    console: "%d{dd.MM.yyyy HH:mm:ss(XXX)} [%-5level] %C{1.} - %msg%n"
+#    console: "%d{dd.MM.yyyy HH:mm:ss(XXX)} [%-5level] %clr(%-60.60logger{32}){cyan} : %msg%n"
+
+# default
+# %clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd'T'HH:mm:ss.SSSXXX}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+
+# %clr(%-60.60logger{59}){cyan} = o.s.cloud.config.client.ConfigServerConfigDataLoader        |
+# %clr(%-60.60logger{32}){cyan} = o.s.c.c.c.ConfigServerConfigDataLoader                      |

@@ -2,11 +2,5 @@ spring:
   application:
     name: personnel
 
-  profiles:
-    active:
-#      - prod
-      - dev
-    default: dev
-
   config:
     import: optional:configserver:http://localhost:8888

@@ -3,18 +3,11 @@ server:
 
 spring:
   profiles:
-    include: # Unconditionally activate profiles (yaml)
-      - eclient # eureka defaultZone
-#    active: # List of active profiles
-#      - dev, prod
-#      - prod
-#    active: dev,prod
-#    default: prod
+    include:
+      - eclient
+    # from application-eclient.yaml and personnel-eclient.yaml if exists
+
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
-
-logging:
-  pattern:
-    console: "%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n"

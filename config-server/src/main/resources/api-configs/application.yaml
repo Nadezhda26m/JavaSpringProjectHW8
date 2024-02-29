@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config: # level {application}-{profile}.yaml
+      # применить данные профили у всех микросервисов (все файлы {application}-{profile}.yaml)
+      # приоритет у последнего
+      profile: dev # default profile
+
+  profiles: # level application-{profile}.yaml
+    # использовать для всех инструкции application-log.yaml
+    include: # Unconditionally activate profiles (yaml)
+      - log
+    # применить application-{active_profile}.yaml ко всем
+#    active: log # List of active profiles
