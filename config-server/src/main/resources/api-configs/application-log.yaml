@@ -1,4 +1,4 @@
-# формат отображения логов в консоли
+# Настройка формата отображения логов в консоли
 logging:
   pattern:
     # 13:43:16 [INFO ] com.netflix.discovery.DiscoveryClient         : The response status is 200

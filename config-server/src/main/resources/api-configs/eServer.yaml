@@ -1,3 +1,4 @@
+# Настройки приложения eureka-server
 server:
   port: 8761
 

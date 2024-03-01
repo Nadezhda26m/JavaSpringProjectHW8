@@ -1,3 +1,4 @@
+# Доп настройки приложения personnel-service для профиля prod
 spring:
   datasource: # контейнер postgresql не настроен
     driver-class-name: org.postgresql.Driver

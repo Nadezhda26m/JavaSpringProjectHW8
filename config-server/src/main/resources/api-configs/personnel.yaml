@@ -1,3 +1,4 @@
+# Настройки приложения personnel-service
 server:
   port: 8082
 
