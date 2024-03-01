@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/personnel")
-public class DemoController {
+public class PersonnelController {
 
     private final EmployeeService employeeService;
 
