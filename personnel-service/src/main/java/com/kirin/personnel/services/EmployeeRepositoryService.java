@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Сервис для работы с данными о сотрудниках, хранящимися в репозитории
+ */
 @Service
 @Profile("prod") // нет реализации БД
 @RequiredArgsConstructor

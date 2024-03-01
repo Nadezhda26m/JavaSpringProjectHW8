@@ -11,16 +11,25 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * Сущность полуфабриката для работы с базой данных
+ */
 @Getter
 @Setter
 @Entity
 @Table(name = "semi_finished_products")
 public class SemiFinishedProduct {
 
+    /**
+     * Уникальный идентификатор полуфабриката
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Наименование полуфабриката
+     */
     @Column(nullable = false)
     private String name;
 

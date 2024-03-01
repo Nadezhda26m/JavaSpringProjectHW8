@@ -10,18 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Контроллер для работы с персоналом
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/personnel")
 public class PersonnelController {
 
+    /**
+     * Сервис для работы с данными о сотрудниках
+     */
     private final EmployeeService employeeService;
 
-    @GetMapping("/new")
-    public ResponseEntity<String> getAnonymous() {
-        return ResponseEntity.ok("Welcome to personnel");
-    }
-
+    /**
+     * Получение списка всех сотрудников.
+     * @return список сотрудников
+     */
     @GetMapping("/list")
     public ResponseEntity<List<Employee>> getAll() {
         return ResponseEntity.ok(employeeService.getAllEmployees());

@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Пищевой продукт
+ * Сущность пищевого продукта для работы с базой данных
  */
 @Getter
 @Setter

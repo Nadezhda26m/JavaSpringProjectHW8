@@ -12,11 +12,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PersonnelConfig {
 
+    /**
+     * Маппер сущностей. Например, из Entity в Response и обратно.
+     */
     @Bean
-    public ModelMapper modelMapperBean() {
+    public ModelMapper modelMapperBean() { // TODO реализовать response для моделей
         return new ModelMapper();
     }
 
+    // Бины для реализации паттерна (HW11)
     @Bean
     @ConditionalOnExpression("#{environment.getProperty('spring.cloud.config.profile').contains('prod')}")
     public EmployeeService employeeRepositoryService(EmployeeRepository employeeRepository) {

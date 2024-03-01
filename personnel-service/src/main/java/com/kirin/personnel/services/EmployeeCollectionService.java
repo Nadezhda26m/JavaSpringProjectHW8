@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Сервис для работы с данными о сотрудниках, хранящимися в коллекции
+ */
 @Service
 @Profile("dev")
 public class EmployeeCollectionService implements EmployeeService {

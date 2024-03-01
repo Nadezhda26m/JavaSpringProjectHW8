@@ -4,7 +4,7 @@ import com.kirin.storage.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Склад пищевых продуктов
+ * Репозиторий для работы с сущностью Product (склад пищевых продуктов)
  */
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
