@@ -16,15 +16,30 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductService {
 
+    /**
+     * Репозиторий для работы с сущностями Product
+     */
     private final ProductRepository repository;
 
+    /**
+     * Маппер сущностей
+     */
     private final ModelMapper mapper;
 
+    /**
+     * Получение списка всех продуктов из репозитория.
+     * @return список продуктов
+     */
     public List<ProductResponse> getAllProducts() {
         return repository.findAll().stream()
                 .map(product -> mapper.map(product, ProductResponse.class)).toList();
     }
 
+    /**
+     * Добавление нового продукта в репозиторий.
+     * @param product объект ProductResponse с информацией о добавляемом продукте
+     * @return объект ProductResponse со всеми полями
+     */
     public ProductResponse addProduct(ProductResponse product) {
         product.setShelfLife(90); // TODO доделать расчет срока годности
         product.setIsInGoodCondition(true);

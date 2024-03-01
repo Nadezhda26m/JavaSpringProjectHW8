@@ -25,7 +25,7 @@ public class PersonnelController {
 
     /**
      * Получение списка всех сотрудников.
-     * @return список сотрудников
+     * @return объект ResponseEntity со списком сотрудников
      */
     @GetMapping("/list")
     public ResponseEntity<List<Employee>> getAll() {
