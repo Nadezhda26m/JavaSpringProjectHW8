@@ -2,6 +2,7 @@ package com.kirin.storage.controllers;
 
 import com.kirin.storage.response.ProductResponse;
 import com.kirin.storage.services.ProductService;
+import com.kirin.storage.services.integration.FileGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,8 @@ public class StorageController {
 
     private final ProductService service;
 
+    private final FileGateway fileGateway;
+
     @GetMapping()
     public ResponseEntity<List<ProductResponse>> getAll() {
         return ResponseEntity.ok().body(service.getAllProducts());
@@ -27,11 +30,13 @@ public class StorageController {
 
     @PostMapping("/add")
     public ResponseEntity<ProductResponse> addProduct(@RequestBody ProductResponse product) {
-        return ResponseEntity.ok().body(service.addProduct(product));
+        ProductResponse productResponse = service.addProduct(product);
+        fileGateway.writeToFile("storage-add.txt", productResponse);
+        return ResponseEntity.ok().body(productResponse);
     }
 
     @GetMapping("/food-group")
     public ResponseEntity<String> showFoodGroup(@RequestParam("name") String groupName) {
-        return ResponseEntity.ok().body(groupName + " ( from storage-service)");
+        return ResponseEntity.ok().body(groupName + " (from storage-service)");
     }
 }
