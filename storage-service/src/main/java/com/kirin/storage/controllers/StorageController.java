@@ -21,6 +21,9 @@ public class StorageController {
 
     private final ProductService service;
 
+    /**
+     * Поток интеграции для записи в файл
+     */
     private final FileGateway fileGateway;
 
     @GetMapping()

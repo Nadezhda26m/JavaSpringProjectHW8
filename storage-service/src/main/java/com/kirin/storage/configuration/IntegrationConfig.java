@@ -16,9 +16,16 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Создание компонентов для определения потока интеграции для записи в файл информации
+ * о добавленных на склад продуктах
+ */
 @Configuration
 public class IntegrationConfig {
 
+    /**
+     * Название приложения для фиксирования в файле
+     */
     @Value("${spring.application.name}")
     private String applicationName;
 
@@ -42,7 +49,7 @@ public class IntegrationConfig {
 
     /**
      * Трансформер. Забирает данные из канала textInputChannel, преобразует их и кладет
-     * в канал fileWriterChannel. Здесь преобразуем строки в строки.
+     * в канал fileWriterChannel. Здесь преобразуем ProductResponse в строку.
      */
     @Bean
     @Transformer(inputChannel = "textInputChannel", outputChannel = "fileWriterChannel")
@@ -66,14 +73,14 @@ public class IntegrationConfig {
     @Bean
     @ServiceActivator(inputChannel = "fileWriterChannel")
     public FileWritingMessageHandler messageHandler() {
-        File file = new File("storage-service/files");
+        File file = new File("storage-service" + File.separator + "files");
         file.mkdir();
         FileWritingMessageHandler handler =
                 new FileWritingMessageHandler(file);
 
         handler.setExpectReply(false);
         handler.setFileExistsMode(FileExistsMode.APPEND);
-        handler.setAppendNewLine(true);
+        handler.setAppendNewLine(true); // + \n
 
         return handler;
     }
